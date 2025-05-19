@@ -1,3 +1,4 @@
+@Library("Shared Library") _
 pipeline {
     agent { label "DEV" }
 
@@ -10,7 +11,7 @@ pipeline {
         stage('Code') {
             steps {
                 echo "Stage 1 – Code"
-                git url: 'https://github.com/hRJ06/Tic-Tac-Toe.git', branch: 'main'
+                clone("https://github.com/hRJ06/Tic-Tac-Toe.git", "main")
             }
         }
 
